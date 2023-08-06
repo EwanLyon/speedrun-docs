@@ -11,7 +11,7 @@ const config = {
   title: `${speeddocsConfig.game} Docs`,
   favicon: 'img/favicon.ico',
   url: speeddocsConfig.url,
-  baseUrl: '/',
+  baseUrl: `/${speeddocsConfig.github.projectName}`,
   organizationName: speeddocsConfig.github.username,
   projectName: speeddocsConfig.github.projectName,
   trailingSlash: false,
