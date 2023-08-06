@@ -1,0 +1,98 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+}
+
+.homepageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.header img {
+  height: 8rem;
+  width: auto;
+
+  filter: var(--logo-filter);
+}
+
+.title {
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  color: var(--speeddocs-font-light);
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+}
+
+.card {
+  height: 30rem;
+  width: 20rem;
+  padding: 2rem;
+  border-radius: 24px;
+  background-color: var(--speeddocs-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--speeddocs-accent);
+  text-align: center;
+
+  color: var(--speeddocs-font-light);
+  animation: 1s ease-out 0s 1 cardFadeIn;
+  animation-delay: calc(var(--animation-order) * 100ms);
+  animation-timing-function: cubic-bezier(0, 0, 0, 1);
+  animation-fill-mode: forwards;
+  box-shadow: 0 8px 20px 0px #fca21152;
+  opacity: 0;
+}
+
+.card:hover {
+  text-decoration: none;
+}
+
+@keyframes cardFadeIn {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,56 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #b37209;
+  --ifm-color-primary-dark: #a16708;
+  --ifm-color-primary-darker: #986108;
+  --ifm-color-primary-darkest: #7d5006;
+  --ifm-color-primary-light: #c57d0a;
+  --ifm-color-primary-lighter: #ce830a;
+  --ifm-color-primary-lightest: #e9940c;
+  --ifm-background-color: #e5e5e5;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  --speeddocs-primary: #000000;
+  --speeddocs-secondary: #14213D;
+  --speeddocs-accent: #FCA311;
+  --speeddocs-font-light: #FFFFFF;
+  --logo-filter: ;
+
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #fca311;
+  --ifm-color-primary-dark: #fc9e04;
+  --ifm-color-primary-darker: #ef9603;
+  --ifm-color-primary-darkest: #d58503;
+  --ifm-color-primary-light: #fcad2c;
+  --ifm-color-primary-lighter: #fdb239;
+  --ifm-color-primary-lightest: #fdc261;
+  --ifm-background-color: #000000;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --speeddocs-primary: #030c20;
+  --speeddocs-secondary: #14213D;
+  --speeddocs-accent: #FCA311;
+  --speeddocs-font-light: #FFF;
+  --logo-filter: invert(1);
+
+  --ifm-navbar-background-color: var(--speeddocs-secondary);
+  --ifm-background-color: var(--speeddocs-primary) !important;
+}
+
+.navbar__logo img {
+  filter: var(--logo-filter);
+}
+
+.navbar {
+  border-bottom: 1px solid var(--speeddocs-accent);
+}
