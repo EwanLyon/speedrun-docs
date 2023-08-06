@@ -18,9 +18,9 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   
   --speeddocs-primary: #000000;
-  --speeddocs-secondary: #14213D;
+  --speeddocs-secondary: #a5b4fc;
   --speeddocs-accent: #FCA311;
-  --speeddocs-font-light: #FFFFFF;
+  --speeddocs-text: #FFFFFF;
   --logo-filter: ;
 
 }
@@ -40,7 +40,6 @@
   --speeddocs-primary: #030c20;
   --speeddocs-secondary: #14213D;
   --speeddocs-accent: #FCA311;
-  --speeddocs-font-light: #FFF;
   --logo-filter: invert(1);
 
   --ifm-navbar-background-color: var(--speeddocs-secondary);

@@ -6,6 +6,8 @@ import Layout from '@theme/Layout';
 
 import styles from './index.module.css';
 
+import SpeeddocsLogo from '@site/static/img/run-man.svg';
+
 interface Card {
 	title: string;
 	subtitle?: string;
@@ -43,7 +45,8 @@ export default function Home() {
 			<main>
 				<div className={styles.homepageContainer}>
 					<header className={styles.header}>
-						<img src="/img/run-man.svg" alt="Speeddocs logo" />
+						<SpeeddocsLogo />
+						{/* <img src={SpeeddocsLogo} alt="Speeddocs logo" /> */}
 						<h1 className={styles.title}>{siteConfig.title} Speedrun Docs</h1>
 					</header>
 					<div className={styles.cards}>

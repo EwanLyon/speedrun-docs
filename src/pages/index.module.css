@@ -42,7 +42,7 @@ main {
   gap: 2rem;
 }
 
-.header img {
+.header svg {
   height: 8rem;
   width: auto;
 
@@ -52,7 +52,7 @@ main {
 .title {
   margin-bottom: 3rem;
   font-size: 3rem;
-  color: var(--speeddocs-font-light);
+  color: var(--ifm-heading-color);
 }
 
 .cards {
@@ -73,7 +73,7 @@ main {
   border: 1px solid var(--speeddocs-accent);
   text-align: center;
 
-  color: var(--speeddocs-font-light);
+  color: var(--ifm-font-color-base);
   animation: 1s ease-out 0s 1 cardFadeIn;
   animation-delay: calc(var(--animation-order) * 100ms);
   animation-timing-function: cubic-bezier(0, 0, 0, 1);
