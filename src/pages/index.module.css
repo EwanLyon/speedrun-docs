@@ -33,6 +33,7 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
+  padding: 2rem 0.5rem;
 }
 
 .header {
@@ -53,6 +54,8 @@ main {
   margin-bottom: 3rem;
   font-size: 3rem;
   color: var(--ifm-heading-color);
+  text-align: center;
+  text-wrap: balance;
 }
 
 .cards {
@@ -84,6 +87,8 @@ main {
 
 .card:hover {
   text-decoration: none;
+  background-color: var(--speeddocs-secondary) #000;
+  transform: translate(0, 16px);
 }
 
 @keyframes cardFadeIn {
@@ -94,5 +99,42 @@ main {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    height: 100%;
+  }
+
+  .card p {
+    margin-bottom: 0;
+  }
+}
+
+/* @media only screen and (max-width: 1048px) {
+  .title {
+    font-size: 4.85vw;
+  }
+} */
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card {
+    width: 100%;
   }
 }
