@@ -1,35 +1,48 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+import speeddocsConfig from './speedrun-docs.json';
+import type { Config } from '@docusaurus/types';
+import type { Options, ThemeConfig } from '@docusaurus/preset-classic';
 
-const speeddocsConfig = require('./speeddocs.json');
+import { themes as prismThemes } from 'prism-react-renderer';
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const optionalNavbarItems: Record<string, any>[] = [];
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+if (speeddocsConfig['speedrun.com']) {
+  optionalNavbarItems.push({
+    href: speeddocsConfig['speedrun.com'],
+    position: 'right',
+    label: 'Leaderboards'
+  });
+}
+
+if (speeddocsConfig.discord) {
+  optionalNavbarItems.push({
+    href: speeddocsConfig.discord,
+    position: 'right',
+    className: 'header-discord-link',
+    'aria-label': 'Discord server invite',
+  });
+}
+
+const config: Config = {
   title: `${speeddocsConfig.game} Docs`,
   favicon: 'img/favicon.ico',
-  url: speeddocsConfig.url,
+  url: `https://${speeddocsConfig.github.username}.github.io/`,
   baseUrl: `/${speeddocsConfig.github.projectName}`,
   organizationName: speeddocsConfig.github.username,
   projectName: speeddocsConfig.github.projectName,
   trailingSlash: false,
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: './sidebars.ts',
           editUrl:
             `https://github.com/${speeddocsConfig.github.username}/${speeddocsConfig.github.projectName}/tree/main/`,
         },
@@ -39,15 +52,13 @@ const config = {
             `https://github.com/${speeddocsConfig.github.username}/${speeddocsConfig.github.projectName}/tree/main/`,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: './src/css/custom.css',
         },
-      }),
+      } satisfies Options,
     ],
   ],
-
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       navbar: {
         title: `${speeddocsConfig.game} Speedrun Docs`,
         logo: {
@@ -67,19 +78,20 @@ const config = {
             position: 'left',
             label: 'Resources',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
-          // {
-          //   href: 'https://github.com/facebook/docusaurus',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
+          ...optionalNavbarItems,
+          {
+            href: `https://github.com/${speeddocsConfig.github.username}/${speeddocsConfig.github.projectName}`,
+            position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
+          },
         ],
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
-    }),
+    } satisfies ThemeConfig,
 };
 
-module.exports = config;
+export default config;

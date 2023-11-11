@@ -75,6 +75,7 @@ main {
   align-items: center;
   border: 1px solid var(--speeddocs-accent);
   text-align: center;
+  text-wrap: balance;
 
   color: var(--ifm-font-color-base);
   animation: 1s ease-out 0s 1 cardFadeIn;
@@ -87,8 +88,6 @@ main {
 
 .card:hover {
   text-decoration: none;
-  background-color: var(--speeddocs-secondary) #000;
-  transform: translate(0, 16px);
 }
 
 @keyframes cardFadeIn {
@@ -116,12 +115,6 @@ main {
     margin-bottom: 0;
   }
 }
-
-/* @media only screen and (max-width: 1048px) {
-  .title {
-    font-size: 4.85vw;
-  }
-} */
 
 @media only screen and (max-width: 768px) {
   .title {

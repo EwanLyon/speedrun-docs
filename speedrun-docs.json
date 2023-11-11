@@ -1,10 +1,9 @@
 {
 	"game": "Test Game",
 	"speedrun.com": "",
+	"discord": "",
 	"github": {
-		"username":	"EwanLyon",
+		"username": "EwanLyon",
 		"projectName": "speedrun-docs"
-	},
-	"url": "https://EwanLyon.github.io/",
-	"discord": ""
+	}
 }

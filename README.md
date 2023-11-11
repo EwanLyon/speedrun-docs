@@ -1,25 +1,29 @@
-# Website
+# Speedrun Docs
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This template is built using [Docusaurus 3](https://docusaurus.io/). You can find a hosted version of this template at [ewanlyon.github.io/speedrun-docs/](https://ewanlyon.github.io/speedrun-docs/)
 
-### Installation
+## Showcase
 
+- [Heavenly Bodies](https://ewanlyon.github.io/HeavenlyBodies-SpeedrunDocs/)
+
+## Installation
+
+```cmd
+npm install
 ```
-$ npm install
-```
 
-### Local Development
+## Local Development
 
-```
-$ npm run start
+```cmd
+npm run start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
+## Build
 
-```
-$ npm run build
+```cmd
+npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.

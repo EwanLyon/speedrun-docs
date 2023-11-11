@@ -1,5 +1,3 @@
-import React from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
@@ -7,6 +5,8 @@ import Layout from '@theme/Layout';
 import styles from './index.module.css';
 
 import SpeeddocsLogo from '@site/static/img/run-man.svg';
+
+import speedrunDocsConfig from "../../speedrun-docs.json";
 
 interface Card {
 	title: string;
@@ -23,18 +23,18 @@ const cards: Card[] = [
 	},
 	{
 		title: 'Resources',
-		subtitle: 'Speedrun Mods, Save Files, Splits',
+		subtitle: 'Mods, Save Files, Splits',
 		link: '/docs/resources',
 	},
 	{
 		title: 'Leaderboards',
-		subtitle: 'speedrun.com/Game',
-		link: 'https://speedrun.com/',
+		subtitle: `speedrun.com/${speedrunDocsConfig['speedrun.com'].split('/').at(-1)}`,
+		link: speedrunDocsConfig['speedrun.com'],
 	},
 	{
 		title: 'Discord',
-		subtitle: 'Talk about new strategies or ask for help in the Discord!',
-		link: 'https://discord.gg/',
+		subtitle: 'Talk about new strategies or ask for help!',
+		link: speedrunDocsConfig.discord,
 	},
 ];
 
