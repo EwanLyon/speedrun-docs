@@ -1,7 +1,7 @@
 {
 	"game": "Test Game",
 	"speedrun.com": "http://speedrun.com/Test_game",
-	"discord": "discord.gg",
+	"discord": "https://discord.gg",
 	"github": {
 		"username": "EwanLyon",
 		"projectName": "speedrun-docs"
