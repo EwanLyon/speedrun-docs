@@ -37,7 +37,7 @@ The file can be found in the root directory of the project.
 
 [Docusaurus Guide](https://docusaurus.io/docs/create-doc)
 
-To create pages just make a new markdown file (`.md`) in the `docs/` folder.
+To create pages make a new text file with the file extension `.md` in the `docs/` folder.
 
 To create nested pages create a folder and add the file there.
 

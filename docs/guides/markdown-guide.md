@@ -26,7 +26,7 @@ Here's a quick [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/
 
 \[Another link to a doc page](./folder/another-doc.md)
 
-\[A link to a url](https://google.com/)
+\[A link to a website](https://google.com/)
 
 ### Text style
 
@@ -36,7 +36,7 @@ Here's a quick [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/
 
 ## Admonitions
 
-More details at the [Docusaurus Documentation](https://docusaurus.io/docs/markdown-features/admonitions).
+More details in the [Docusaurus Documentation](https://docusaurus.io/docs/markdown-features/admonitions).
 
 ```markdown
 :::note

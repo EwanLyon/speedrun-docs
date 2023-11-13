@@ -90,6 +90,16 @@ main {
   text-decoration: none;
 }
 
+.cardTitle {
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.card p {
+  height: 50%;
+}
+
 @keyframes cardFadeIn {
   0% {
     transform: translateY(10%);
