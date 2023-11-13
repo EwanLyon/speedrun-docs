@@ -26,17 +26,23 @@ const cards: Card[] = [
 		subtitle: "Mods, Save Files, Splits",
 		link: "/docs/resources",
 	},
-	{
+];
+
+if (speedrunDocsConfig["speedrun.com"]) {
+	cards.push({
 		title: "Leaderboards",
 		subtitle: `speedrun.com/${speedrunDocsConfig["speedrun.com"].split("/").at(-1)}`,
 		link: speedrunDocsConfig["speedrun.com"],
-	},
-	{
+	});
+}
+
+if (speedrunDocsConfig.discord) {
+	cards.push({
 		title: "Discord",
 		subtitle: "Talk about new strategies or ask for help!",
 		link: speedrunDocsConfig.discord,
-	},
-];
+	});
+}
 
 export default function Home() {
 	const { siteConfig } = useDocusaurusContext();
