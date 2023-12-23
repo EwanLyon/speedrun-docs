@@ -4,6 +4,12 @@ sidebar_position: 2
 
 # Markdown
 
+:::note Speedrun Docs Guide
+
+You should remove this page when making your docs.
+
+:::
+
 To learn all the things Docusaurus can do, visit their guide on markdown features: [Markdown Features](https://docusaurus.io/docs/markdown-features).
 
 Here's a quick [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/).

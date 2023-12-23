@@ -4,7 +4,13 @@ sidebar_position: 1
 
 # Basics
 
-Speeddocs is template of [Docusaurus](https://docusaurus.io/). Anything you want to customise or need help with can be found from [**their documentation**](https://docusaurus.io/docs).
+:::note Speedrun Docs Guide
+
+You should remove this page when making your docs.
+
+:::
+
+Speedrun-Docs is template of [Docusaurus](https://docusaurus.io/). Anything you want to customise or need help with can be found from [**their documentation**](https://docusaurus.io/docs).
 
 ## Installation
 

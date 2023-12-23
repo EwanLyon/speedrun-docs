@@ -1,5 +1,11 @@
 # Mods
 
+:::note Example File
+
+Remove this and start editing!
+
+:::
+
 ## Autosplitter Mod
 
 - [Link to mod](/)

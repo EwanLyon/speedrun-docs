@@ -4,15 +4,21 @@ sidebar_position: 3
 
 # Embedding Content
 
+:::note Speedrun Docs Guide
+
+You should remove this page when making your docs.
+
+:::
+
 ## Images
 
 1. Add the image to the `static` folder at the root directory.
-2. Add `![Title of image](../../static/<path to file>)`.
+2. Add `![Title of image](<path to file>)`.
 
 Example:
 
-`![Speedrun Docs Logo](../../static/img/run-man.svg)`
-![Speedrun Docs Logo](../../static/img/run-man.svg)
+`![Speedrun Docs Logo](/img/run-man.svg)`
+![Speedrun Docs Logo](/img/run-man.svg)
 
 :::tip Speedrun Docs Logo
 
@@ -52,7 +58,7 @@ Videos are crucial in teaching speedruns. Here's how to link to different places
 />
 ```
 
-### Making it the full width of the page
+#### Making it the full width of the page
 
 The iframe sets a pixel width and height. This is not ideal for modern day browsing as browsers can be different sizes.
 

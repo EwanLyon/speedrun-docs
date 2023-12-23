@@ -7,11 +7,17 @@ import localSearch from "@easyops-cn/docusaurus-search-local";
 import { themes as prismThemes } from 'prism-react-renderer';
 
 const optionalNavbarItems: Record<string, any>[] = [];
+const optionalFooterItems: Record<string, any>[] = [];
 
 if (speeddocsConfig['speedrun.com']) {
   optionalNavbarItems.push({
     href: speeddocsConfig['speedrun.com'],
     position: 'right',
+    label: 'Leaderboards'
+  });
+
+  optionalFooterItems.push({
+    href: speeddocsConfig['speedrun.com'],
     label: 'Leaderboards'
   });
 }
@@ -21,6 +27,12 @@ if (speeddocsConfig.discord) {
     href: speeddocsConfig.discord,
     position: 'right',
     className: 'header-discord-link',
+    'aria-label': 'Discord server invite',
+  });
+
+  optionalFooterItems.push({
+    href: speeddocsConfig.discord,
+    label: 'Discord',
     'aria-label': 'Discord server invite',
   });
 }
@@ -87,6 +99,10 @@ const config: Config = {
           'aria-label': 'GitHub repository',
         },
       ],
+    },
+    footer: {
+      copyright: 'Made with Speedrun Docs/Docusaurus',
+      links: optionalFooterItems,
     },
     prism: {
       theme: prismThemes.github,

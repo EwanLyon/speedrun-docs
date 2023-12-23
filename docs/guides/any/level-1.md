@@ -1,3 +1,7 @@
 # Level 1
 
-Example file.
+:::note Example File
+
+Remove this and start editing!
+
+:::
