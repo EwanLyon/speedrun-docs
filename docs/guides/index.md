@@ -59,7 +59,7 @@ Adding a new tab at the top such as the "Tutorial" and "Resources" tab.
    1. Scroll to down to the `themeConfig`
    2. In `navbar` in the `items` square brackets add
 
-         ```JSON title="docusaurus.config.ts"
+         ```ts title="docusaurus.config.ts"
          {
             type: 'docSidebar',
             sidebarId: '<New Tab>Sidebar',
@@ -70,7 +70,7 @@ Adding a new tab at the top such as the "Tutorial" and "Resources" tab.
 
       - E.g.
 
-        ```JSON title="docusaurus.config.ts"
+        ```ts title="docusaurus.config.ts"
         {
             type: 'docSidebar',
             sidebarId: 'hundredPercentSidebar',

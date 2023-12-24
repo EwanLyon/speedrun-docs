@@ -1,0 +1,44 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Deploying
+
+:::note Speedrun Docs Guide
+
+You should remove this page when making your docs.
+
+:::
+
+1. Set your GitHub username as an environment variable:
+
+<Tabs>
+<TabItem value="ps" label="Powershell">
+
+```powershell
+$env:GIT_USER="<GitHub-Username>"
+```
+
+</TabItem>
+<TabItem value="bash" label="Bash">
+
+```bash
+GIT_USER=<GitHub-Username> npm run deploy
+```
+
+</TabItem>
+<TabItem value="cmd" label="CMD/Windows Terminal">
+
+```cmd
+set GIT_USER=<GitHub-Username>
+```
+
+</TabItem>
+</Tabs>
+
+2. Run `npm run deploy`
+
+:::tip One time setup
+
+You only have to do this once. After that the scripts in this `.github/` folder will take over. If you are not using GitHub then I imagine you know what you are doing or are looking at the [Docusaurus docs](https://docusaurus.io/docs/deployment).
+
+:::
