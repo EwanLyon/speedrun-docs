@@ -47,6 +47,33 @@ To create pages make a new text file with the file extension `.md` in the `docs/
 
 To create nested pages create a folder and add the file there.
 
+### Front matter
+
+Docusaurus has support for more information at the top of a markdown file called "front matter".
+
+```yaml
+---
+sidebar_position: 1
+description: This is a handmade description for a page
+sidebar_custom_props:
+  image: <url>
+---
+```
+
+#### Speedrun-Docs Custom Props
+
+Speedrun Docs will have support for more built in theming.
+
+| Property        | Type   |
+|-----------------|--------|
+| [image](#image) | String |
+
+##### image
+
+Adding a `sidebar_custom_props` to the front matter and then adding an `image` property under that (like in the example above), will add an image to the generated sidebar document view.
+
+An example of this can be seen in the [Any% generated page](category/any) and in the front matter for [Level 1](any/level-1.md).
+
 ## Adding new tabs
 
 Adding a new tab at the top such as the "Tutorial" and "Resources" tab.

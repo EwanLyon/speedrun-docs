@@ -1,4 +1,8 @@
 {
 	"label": "Any%",
-	"position": 4
+	"position": 2,
+	"link": {
+	  "type": "generated-index",
+	  "title": "Any% Guides"
+	}
 }
