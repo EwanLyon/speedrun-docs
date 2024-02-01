@@ -18,15 +18,31 @@ interface Card {
 const cards: Card[] = [
 	{
 		title: "Guides",
-		subtitle: "Some tutorials for how to use Speedrun-Docs",
+		subtitle: "Our nicely written guides for test game",
 		link: "/docs/guides",
 	},
 	{
-		title: "Showcase",
-		subtitle: "View Speedrun communities currently using Speedrun-Docs",
-		link: "/docs/showcase",
+		title: "Resources",
+		subtitle: "Mods, Save Files, Splits",
+		link: "/docs/resources",
 	},
 ];
+
+if (speedrunDocsConfig["speedrun.com"]) {
+	cards.push({
+		title: "Leaderboards",
+		subtitle: `speedrun.com/${speedrunDocsConfig["speedrun.com"].split("/").at(-1)}`,
+		link: speedrunDocsConfig["speedrun.com"],
+	});
+}
+
+if (speedrunDocsConfig.discord) {
+	cards.push({
+		title: "Discord",
+		subtitle: "Talk about new strategies or ask for help!",
+		link: speedrunDocsConfig.discord,
+	});
+}
 
 export default function Home() {
 	const { siteConfig } = useDocusaurusContext();
@@ -36,7 +52,7 @@ export default function Home() {
 				<div className={styles.homepageContainer}>
 					<header className={styles.header}>
 						<SpeeddocsLogo />
-						<h1 className={styles.title}>Speedrun Docs</h1>
+						<h1 className={styles.title}>{siteConfig.title} Speedrun Docs</h1>
 					</header>
 					<div className={styles.cards}>
 						{cards.map((card, i) => (

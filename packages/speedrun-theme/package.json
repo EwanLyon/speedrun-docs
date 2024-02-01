@@ -1,0 +1,52 @@
+{
+	"name": "speedrun-theme",
+	"version": "0.5.0",
+	"description": "A Docusaurus theme tailored to Speedrun documentation",
+	"main": "lib/index.js",
+	"types": "src/theme-config.d.ts",
+	"sideEffects": false,
+	"exports": {
+		"./lib/*": "./lib/*",
+		"./src/*": "./src/*",
+		"./client": {
+			"type": "./lib/client/index.d.ts",
+			"default": "./lib/client/index.js"
+		},
+		".": {
+			"types": "./src/theme-config.d.ts",
+			"default": "./lib/index.js"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsc --build && node ../../admin/copyUntypedFiles.js",
+		"watch": "run-p -c copy:watch build:watch",
+		"build:watch": "tsc --build --watch",
+		"copy:watch": "node ../../admin/scripts/copyUntypedFiles.js --watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/EwanLyon/speedrun-docs.git",
+		"directory": "packages/speedrun-theme"
+	},
+	"keywords": [
+		"docusaurus",
+		"speedrun"
+	],
+	"author": "Ewan Lyon",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/EwanLyon/speedrun-docs/issues"
+	},
+	"homepage": "https://ewanlyon.github.io/speedrun-docs/",
+	"dependencies": {
+		"@docusaurus/core": "^3.1.1",
+		"@docusaurus/module-type-aliases": "^3.1.1",
+		"@docusaurus/theme-common": "^3.1.1",
+		"@docusaurus/types": "^3.1.1",
+		"@docusaurus/utils-validation": "^3.1.1",
+		"tslib": "^2.6.2"
+	}
+}

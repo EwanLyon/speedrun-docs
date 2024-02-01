@@ -4,6 +4,37 @@ import type { Config } from "@docusaurus/types";
 import type { Options, ThemeConfig } from "speedrun-preset";
 import { themes as prismThemes } from "prism-react-renderer";
 
+const optionalNavbarItems: Record<string, any>[] = [];
+const optionalFooterItems: Record<string, any>[] = [];
+
+if (speedrunDocsConfig["speedrun.com"]) {
+	optionalNavbarItems.push({
+		href: speedrunDocsConfig["speedrun.com"],
+		position: "right",
+		label: "Leaderboards",
+	});
+
+	optionalFooterItems.push({
+		href: speedrunDocsConfig["speedrun.com"],
+		label: "Leaderboards",
+	});
+}
+
+if (speedrunDocsConfig.discord) {
+	optionalNavbarItems.push({
+		href: speedrunDocsConfig.discord,
+		position: "right",
+		className: "header-discord-link",
+		"aria-label": "Discord server invite",
+	});
+
+	optionalFooterItems.push({
+		href: speedrunDocsConfig.discord,
+		label: "Discord",
+		"aria-label": "Discord server invite",
+	});
+}
+
 const config: Config = {
 	title: `${speedrunDocsConfig.game} Docs`,
 	favicon: "img/favicon.ico",
@@ -31,7 +62,7 @@ const config: Config = {
 	],
 	themeConfig: {
 		navbar: {
-			title: "Speedrun Docs",
+			title: `${speedrunDocsConfig.game} Speedrun Docs`,
 			logo: {
 				alt: "Speedrun Docs Logo",
 				src: "img/run-man.svg",
@@ -41,7 +72,7 @@ const config: Config = {
 					type: "docSidebar",
 					sidebarId: "tutorialSidebar",
 					position: "left",
-					label: "Tutorials",
+					label: "Tutorial",
 				},
 				{
 					type: "docSidebar",
@@ -49,6 +80,7 @@ const config: Config = {
 					position: "left",
 					label: "Resources",
 				},
+				...optionalNavbarItems,
 				{
 					href: `https://github.com/${speedrunDocsConfig.github.username}/${speedrunDocsConfig.github.repository}`,
 					position: "right",
@@ -59,6 +91,7 @@ const config: Config = {
 		},
 		footer: {
 			copyright: "Made with Speedrun Docs/Docusaurus",
+			links: optionalFooterItems,
 		},
 		prism: {
 			theme: prismThemes.github,

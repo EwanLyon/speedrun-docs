@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"jsx": "react",
+		"noEmit": false,
+		"composite": true,
+		"incremental": true,
+		"tsBuildInfoFile": "./lib/.tsbuildinfo-client",
+		"rootDir": "src",
+		"outDir": "lib",
+		"moduleResolution": "bundler",
+		"module": "esnext",
+		"target": "esnext"
+	},
+	"exclude": ["**/__tests__/**", "./lib/**/*"]
+}

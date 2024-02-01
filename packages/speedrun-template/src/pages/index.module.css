@@ -1,0 +1,142 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+}
+
+.homepageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 0.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.header svg {
+  height: 8rem;
+  width: auto;
+
+  filter: var(--logo-filter);
+}
+
+.title {
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  color: var(--ifm-heading-color);
+  text-align: center;
+  text-wrap: balance;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+}
+
+.card {
+  height: 30rem;
+  width: 20rem;
+  padding: 2rem;
+  border-radius: 24px;
+  background-color: var(--speeddocs-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--speeddocs-accent);
+  text-align: center;
+  text-wrap: balance;
+
+  color: var(--ifm-font-color-base);
+  animation: 1s ease-out 0s 1 cardFadeIn;
+  animation-delay: calc(var(--animation-order) * 100ms);
+  animation-timing-function: cubic-bezier(0, 0, 0, 1);
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.card:hover {
+  text-decoration: none;
+}
+
+.cardTitle {
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.card p {
+  height: 50%;
+}
+
+@keyframes cardFadeIn {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    height: 100%;
+  }
+
+  .card p {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
