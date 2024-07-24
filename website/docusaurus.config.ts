@@ -50,6 +50,11 @@ const config: Config = {
 					label: "Resources",
 				},
 				{
+					position: "left",
+					label: "Showcase",
+					to: "showcase"
+				},
+				{
 					href: `https://github.com/${speedrunDocsConfig.github.username}/${speedrunDocsConfig.github.repository}`,
 					position: "right",
 					className: "header-github-link",

@@ -33,14 +33,17 @@
 	--ifm-table-border-width: 0px;
 
 	--speeddocs-primary: #030c20;
+	--speeddocs-primary-rgb-values: 3, 12, 32;
 	--speeddocs-secondary: #14213d;
+	--speeddocs-secondary-rgb-values: 20, 33, 61;
 	--speeddocs-accent: #fca311;
+	--speeddocs-accent-rgb-values: 252, 163, 17;
 	--logo-filter: invert(1);
 	
-	--ifm-navbar-background-color: var(--speeddocs-secondary);
+	--ifm-navbar-background-color: rgba(var(--speeddocs-secondary-rgb-values), 0.5);
 	--ifm-background-color: var(--speeddocs-primary) !important;
 	--ifm-background-surface-color: var(--speeddocs-secondary) !important;
-	--ifm-background-surface-color-split: 3, 12, 32; /* Used for the gradients on top of images */
+	/* --ifm-background-surface-color-split: 3, 12, 32; Used for the gradients on top of images */
 	--ifm-navbar-search-input-background-color: var(--speeddocs-primary);
 	--ifm-navbar-search-input-icon: url('data:image/svg+xml;utf8,<svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16px" width="16px"><path d="M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29912,0,.89749.89749,0,0,0-.00087-1.29909Z" /></svg>');
 	--ifm-footer-background-color: var(--speeddocs-secondary);
@@ -89,6 +92,7 @@
 
 .navbar {
 	border-bottom: thin solid var(--speeddocs-accent);
+	backdrop-filter: saturate(180%) blur(10px);
 }
 
 footer {
