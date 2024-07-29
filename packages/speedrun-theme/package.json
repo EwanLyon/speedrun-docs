@@ -21,10 +21,10 @@
 		"access": "public"
 	},
 	"scripts": {
-		"build": "tsc --build && node ../../admin/copyUntypedFiles.js",
+		"build": "run -T tsc --build && node ../../admin/copyUntypedFiles.js",
 		"watch": "run-p -c copy:watch build:watch",
-		"build:watch": "tsc --build --watch",
-		"copy:watch": "node ../../admin/scripts/copyUntypedFiles.js --watch"
+		"build:watch": "run -T tsc --build --watch",
+		"copy:watch": "node ../../admin/copyUntypedFiles.js --watch"
 	},
 	"repository": {
 		"type": "git",
@@ -42,11 +42,14 @@
 	},
 	"homepage": "https://ewanlyon.github.io/speedrun-docs/",
 	"dependencies": {
-		"@docusaurus/core": "^3.1.1",
-		"@docusaurus/module-type-aliases": "^3.1.1",
-		"@docusaurus/theme-common": "^3.1.1",
-		"@docusaurus/types": "^3.1.1",
-		"@docusaurus/utils-validation": "^3.1.1",
-		"tslib": "^2.6.2"
+		"@docusaurus/core": "^3.4.0",
+		"@docusaurus/module-type-aliases": "^3.4.0",
+		"@docusaurus/theme-common": "^3.4.0",
+		"@docusaurus/types": "^3.4.0",
+		"@docusaurus/utils-validation": "^3.4.0",
+		"tslib": "^2.6.3"
+	},
+	"devDependencies": {
+		"schema-dts": "^1.1.2"
 	}
 }

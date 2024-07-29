@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = preset;
 const speedrun_theme_1 = require("speedrun-theme");
 function makePluginConfig(source, options) {
     if (options) {
@@ -53,4 +54,3 @@ function preset(context, opts = {}) {
     }
     return { themes, plugins };
 }
-exports.default = preset;

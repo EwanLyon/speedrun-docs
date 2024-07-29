@@ -6,8 +6,6 @@ import styles from "./index.module.css";
 
 import SpeeddocsLogo from "@site/static/img/run-man.svg";
 
-import speedrunDocsConfig from "../../speedrun-docs.json";
-
 interface Card {
 	title: string;
 	subtitle?: string;
@@ -19,12 +17,12 @@ const cards: Card[] = [
 	{
 		title: "Guides",
 		subtitle: "Some tutorials for how to use Speedrun-Docs",
-		link: "/docs/guides",
+		link: "/docs/tutorials",
 	},
 	{
 		title: "Showcase",
 		subtitle: "View Speedrun communities currently using Speedrun-Docs",
-		link: "/docs/showcase",
+		link: "/showcase",
 	},
 ];
 
@@ -32,7 +30,7 @@ export default function Home() {
 	const { siteConfig } = useDocusaurusContext();
 	return (
 		<Layout title={siteConfig.title}>
-			<main>
+			<main className={styles.landingPage}>
 				<div className={styles.homepageContainer}>
 					<header className={styles.header}>
 						<SpeeddocsLogo />

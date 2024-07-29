@@ -1,15 +1,19 @@
 import { transformNode } from "./utils";
-const YOUTUBE_REGEX = /^https?:\/\/.*youtu(?:\.be\/|v\/|u\/\w\/|embed\/|(?:be\.com\/)?watch\?v=)([^#&?]*).*(?:t=([0-9]+))?.*$/;
+const YOUTUBE_REGEX = /(?:https?:)?(?:\/\/)?(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\S*?[^\w\s-])([\w-]{11})(?=[^\w-]|$)(?![?=&+%\w.-]*(?:['"][^<>]*>|<\/a>))[?=&+%\w.-]*/; // Taken from Regex101
+const YOUTUBE_TIME_REGEX = /t=([^#&\n\r]+)s/;
 const TWITCH_REGEX = /^https?:\/\/.*twitch\.tv\//;
 function YouTubeVideo(node, youtubeRegex) {
     let youtubeURL = "https://www.youtube-nocookie.com/embed/";
     if (typeof youtubeRegex[1] === "string") {
         youtubeURL += youtubeRegex[1];
     }
-    const startTime = parseInt(youtubeRegex[2]);
-    if (!isNaN(startTime)) {
-        youtubeURL += `?t=${startTime}`;
+    const youtubeTime = YOUTUBE_TIME_REGEX.exec(node.url);
+    console.log(youtubeTime);
+    // If regex was successful, add it to the end of the youtubeURL string
+    if (youtubeTime && youtubeTime[1]) {
+        youtubeURL += `?start=${youtubeTime[1]}`;
     }
+    console.log(youtubeURL);
     return {
         type: "mdxJsxFlowElement",
         name: "YouTubeVideo",

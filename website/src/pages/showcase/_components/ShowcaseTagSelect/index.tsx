@@ -7,7 +7,7 @@
 
 import React, { useCallback, useState, useEffect, type ComponentProps, type ReactNode, type ReactElement } from "react";
 import { useHistory, useLocation } from "@docusaurus/router";
-import type { TagType } from "../../data";
+import type { TagType } from "../../../../data/showcase-data";
 
 import { prepareUserState } from "../../index";
 import styles from "./styles.module.css";

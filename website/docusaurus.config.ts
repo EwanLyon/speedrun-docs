@@ -26,6 +26,9 @@ const config: Config = {
 					sidebarPath: "./sidebars.ts",
 					editUrl: `https://github.com/${speedrunDocsConfig.github.username}/${speedrunDocsConfig.github.repository}/tree/main/`,
 				},
+				theme: {
+					customCss: ["./src/css/custom.css"],
+				},
 			} satisfies Options,
 		],
 	],
@@ -44,15 +47,9 @@ const config: Config = {
 					label: "Tutorials",
 				},
 				{
-					type: "docSidebar",
-					sidebarId: "resourcesSidebar",
-					position: "left",
-					label: "Resources",
-				},
-				{
 					position: "left",
 					label: "Showcase",
-					to: "showcase"
+					to: "showcase",
 				},
 				{
 					href: `https://github.com/${speedrunDocsConfig.github.username}/${speedrunDocsConfig.github.repository}`,

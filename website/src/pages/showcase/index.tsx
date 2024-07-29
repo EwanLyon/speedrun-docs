@@ -1,10 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import { useState, useMemo, useEffect } from "react";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -14,14 +7,18 @@ import { usePluralForm } from "@docusaurus/theme-common";
 
 import Layout from "@theme/Layout";
 import FavouriteIcon from "./_components/FavouriteIcon/favourite-icon";
-import { sortedWebsites, Tags, TagList, type Website, type TagType } from "./data";
+import { sortedWebsites, Tags, TagList, type Website, type TagType } from "../../data/showcase-data";
 import Heading from "@theme/Heading";
 import ShowcaseTagSelect, { readSearchTags } from "./_components/ShowcaseTagSelect";
 import ShowcaseFilterToggle, { type Operator, readOperator } from "./_components/ShowcaseFilterToggle";
 import ShowcaseCard from "./_components/ShowcaseCard";
-import ShowcaseTooltip from "./_components/ShowcaseTooltip";
 
 import styles from "./styles.module.css";
+import Link from "@docusaurus/Link";
+
+const TITLE = "Speedrun Docs Showcase";
+const DESCRIPTION = "List of speedrun documentation sites people are building with Speedrun-Docs";
+const SUBMIT_URL = "https://github.com/EwanLyon/speedrun-docs/discussions/1";
 
 type UserState = {
 	scrollTopPosition: number;
@@ -95,15 +92,14 @@ function useFilteredUsers() {
 	);
 }
 
-const TITLE = "Docusaurus Site Showcase";
-const DESCRIPTION = "List of websites people are building with Speedrun-Docs";
-
 function ShowcaseHeader() {
 	return (
 		<section className="margin-top--lg margin-bottom--lg text--center">
 			<Heading as="h1">{TITLE}</Heading>
 			<p>{DESCRIPTION}</p>
-			<p>Message Clubwho on Discord to have your site added.</p>
+			<Link className="button button--primary" to={SUBMIT_URL}>
+				🙏 Please add your speedrun docs
+			</Link>
 		</section>
 	);
 }
@@ -146,28 +142,26 @@ function ShowcaseFilters() {
 
 					return (
 						<li key={i} className={styles.checkboxListItem}>
-							<ShowcaseTooltip id={id} text={description} anchorEl="#__docusaurus">
-								<ShowcaseTagSelect
-									tag={tag}
-									id={id}
-									label={label}
-									icon={
-										tag === "favourite" ? (
-											<FavouriteIcon svgClass={styles.svgIconFavoriteXs} />
-										) : (
-											<span
-												style={{
-													backgroundColor: color,
-													width: 10,
-													height: 10,
-													borderRadius: "50%",
-													marginLeft: 8,
-												}}
-											/>
-										)
-									}
-								/>
-							</ShowcaseTooltip>
+							<ShowcaseTagSelect
+								tag={tag}
+								id={id}
+								label={label}
+								icon={
+									tag === "favourite" ? (
+										<FavouriteIcon svgClass={styles.svgIconFavoriteXs} />
+									) : (
+										<span
+											style={{
+												backgroundColor: color,
+												width: 10,
+												height: 10,
+												borderRadius: "50%",
+												marginLeft: 8,
+											}}
+										/>
+									)
+								}
+							/>
 						</li>
 					);
 				})}
@@ -239,7 +233,7 @@ function ShowcaseCards() {
 						<div className="container">
 							<div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
 								<Heading as="h2">
-									<Translate id="showcase.favoritesList.title">Our favorites</Translate>
+									<Translate id="showcase.favoritesList.title">Our favourites</Translate>
 								</Heading>
 								<FavouriteIcon svgClass={styles.svgIconFavorite} />
 							</div>

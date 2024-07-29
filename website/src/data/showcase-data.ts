@@ -30,7 +30,7 @@ export type TagType =
 	| "design"
 	// Site must have more than one locale.
 	| "i18n"
-	// Large sites are defined as those with > 200 pages, excluding versions.
+	// Large sites are defined as those with > 50 pages.
 	| "large"
 	| "personal";
 
@@ -39,10 +39,10 @@ export type TagType =
 const Websites: Website[] = [
   {
     title: 'Heavenly Bodies',
-    description: 'Heavenly Bodies',
-    preview: require('./images/heavenly-bodies.png'),
-    website: 'https://ewanlyon.github.io/heavenly-bodies-speedrun-docs/',
-    source: 'https://github.com/ewanlyon/heavenly-bodies-speedrun-docs',
+    description: 'The first site using Speedrun Docs. Used as a dogfooding project to test the framework.',
+    preview: require('./showcase-images/heavenly-bodies.png'),
+    website: 'https://ewanlyon.github.io/HeavenlyBodies-SpeedrunDocs/',
+    source: 'https://github.com/EwanLyon/HeavenlyBodies-SpeedrunDocs',
     tags: ['design', 'favourite'],
   },
 

@@ -11,9 +11,8 @@ import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 // import Image from '@theme/IdealImage';
 import FavouriteIcon from "../FavouriteIcon/favourite-icon";
-import { Tags, TagList, type TagType, type Website, type Tag } from "../../data";
+import { Tags, TagList, type TagType, type Website, type Tag } from "../../../../data/showcase-data";
 import Heading from "@theme/Heading";
-import Tooltip from "../ShowcaseTooltip";
 import styles from "./styles.module.css";
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, description }, ref) => (
@@ -34,18 +33,17 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
 			{tagObjectsSorted.map((tagObject, index) => {
 				const id = `showcase_card_tag_${tagObject.tag}`;
 
-				return (
-					<Tooltip key={index} text={tagObject.description} anchorEl="#__docusaurus" id={id}>
-						<TagComp key={index} {...tagObject} />
-					</Tooltip>
-				);
+				return <TagComp key={index} {...tagObject} />;
 			})}
 		</>
 	);
 }
 
 function getCardImage(user: Website): string {
-	return user.preview ?? `https://slorber-api-screenshot.netlify.app/${encodeURIComponent(user.website)}/showcase`;
+	return (
+		(user.preview as any)?.default ??
+		`https://slorber-api-screenshot.netlify.app/${encodeURIComponent(user.website)}/showcase`
+	);
 }
 
 function ShowcaseCard({ user }: { user: Website }) {
@@ -64,7 +62,7 @@ function ShowcaseCard({ user }: { user: Website }) {
 					</Heading>
 					{user.tags.includes("favourite") && <FavouriteIcon svgClass={styles.svgIconFavorite} size="small" />}
 					{user.source && (
-						<Link href={user.source} className={clsx("button button--secondary button--sm", styles.showcaseCardSrcBtn)}>
+						<Link href={user.source} className={clsx("button button--primary button--sm", styles.showcaseCardSrcBtn)}>
 							<Translate id="showcase.card.sourceLink">source</Translate>
 						</Link>
 					)}
