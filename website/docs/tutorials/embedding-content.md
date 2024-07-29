@@ -2,9 +2,6 @@
 sidebar_position: 5
 ---
 
-// import YouTubeVideo from '@theme-original/YouTubeVideo';
-// import TwitchVideo from '@theme-original/TwitchVideo';
-
 # Embedding Content
 
 ## Images and Local Videos
@@ -46,16 +43,16 @@ All of these methods support timestamps as well.
 
 `![AusSpeedruns Channel](https://www.twitch.tv/ausspeedruns)`
 
-{/* ![AusSpeedruns Channel](https://www.twitch.tv/ausspeedruns) */}
+![AusSpeedruns Channel](https://www.twitch.tv/ausspeedruns)
 
 #### Clip
 
 `![THIS IS REFUNCT](https://www.twitch.tv/ausspeedruns/clip/LuckyScaryAyeayeGrammarKing-9Hp6-C0bkCTPywxw)`
 
-{/* ![THIS IS REFUNCT](https://www.twitch.tv/ausspeedruns/clip/LuckyScaryAyeayeGrammarKing-9Hp6-C0bkCTPywxw) */}
+![THIS IS REFUNCT](https://www.twitch.tv/ausspeedruns/clip/LuckyScaryAyeayeGrammarKing-9Hp6-C0bkCTPywxw)
 
 #### VOD
 
 `![ASM2024 Skyward Sword 100% VOD](https://www.twitch.tv/videos/2202116870)`
 
-{/* ![ASM2024 Skyward Sword 100% VOD](https://www.twitch.tv/videos/2202116870) */}
+![ASM2024 Skyward Sword 100% VOD](https://www.twitch.tv/videos/2202116870)

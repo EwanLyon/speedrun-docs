@@ -17,14 +17,11 @@ function YouTubeVideo(node: Image, youtubeRegex: RegExpExecArray): MdxJsxFlowEle
 	}
 
 	const youtubeTime = YOUTUBE_TIME_REGEX.exec(node.url);
-	console.log(youtubeTime)
 	
 	// If regex was successful, add it to the end of the youtubeURL string
 	if (youtubeTime && youtubeTime[1]) {
 		youtubeURL += `?start=${youtubeTime[1]}`;
 	}
-	
-	console.log(youtubeURL)
 
 	return {
 		type: "mdxJsxFlowElement",
